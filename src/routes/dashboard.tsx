@@ -5,5 +5,5 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 function Dashboard() {
-  return <div>Hello "/dashboard"!</div>;
+  return <main className="p-4">Dashboard</main>;
 }
