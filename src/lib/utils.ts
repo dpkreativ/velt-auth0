@@ -45,3 +45,13 @@ export function average(arr: number[]) {
 export function getLabels(arr: any[]) {
   return arr.map((item) => `${item.month.slice(0, 3)}, ${item.year}`).reverse();
 }
+
+export function formatUserData(user: any) {
+  return {
+    ...user,
+    initials: user.name
+      .split(" ")
+      .map((x: string) => x[0])
+      .join(""),
+  };
+}
