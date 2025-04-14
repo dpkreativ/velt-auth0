@@ -19,7 +19,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { useSetDocument, VeltCursor, VeltPresence } from "@veltdev/react";
+import { useSetDocument } from "@veltdev/react";
 
 ChartJS.register(
   CategoryScale,
