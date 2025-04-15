@@ -81,7 +81,3 @@ src/
 - Leave comments on any UI element (like cards or buttons)
 - See teammates' cursors and comment threads in real time
 - All interactions sync instantly, with built-in user avatars and names
-
----
-
-Built with 🛠 by [Divi](https://github.com/dpkreativ) using Velt and Auth0
