@@ -1,12 +1,37 @@
+import { getLabels, styleDiastolic, styleSystolic } from "@/lib/utils";
+
+export const mockUsers = [
+  {
+    name: "Rick Sanchez",
+    email: "rick@example.com",
+  },
+  {
+    name: "Summer Smith",
+    email: "summer@example.com",
+  },
+  {
+    name: "Morty Smith",
+    email: "morty@example.com",
+  },
+  {
+    name: "Jerry Smith",
+    email: "jerry@example.com",
+  },
+  {
+    name: "Beth Smith",
+    email: "beth@example.com",
+  }
+]
+
 export const PatientData = {
-  name: "Morty Sanchez",
+  name: "Morty Smith",
   gender: "Male",
   get age() {
     const birthYear = Number(this.date_of_birth.split("-")[0]);
     return new Date().getFullYear() - birthYear;
   },
   profile_picture: "https://github.com/shadcn.png",
-  date_of_birth: "1974-08-19",
+  date_of_birth: "1999-02-16",
   phone_number: "(711) 984-6696",
   emergency_contact: "(680) 653-9512",
   insurance_type: "Premier Auto Corporation",
@@ -279,3 +304,23 @@ export const PatientData = {
     "Radiology Report",
   ],
 };
+
+export const dataChart = {
+    labels: getLabels(PatientData.diagnosis_history),
+    datasets: [
+      {
+        label: "Systolic",
+        data: PatientData.diagnosis_history.map(
+          (item) => item.blood_pressure.systolic.value,
+        ),
+        ...styleSystolic,
+      },
+      {
+        label: "Diastolic",
+        data: PatientData.diagnosis_history.map(
+          (item) => item.blood_pressure.diastolic.value,
+        ),
+        ...styleDiastolic,
+      },
+    ],
+  };

@@ -42,18 +42,8 @@ export function average(arr: number[]) {
   return Math.floor(sum / arr.length);
 }
 
-export function getLabels(arr: any[]) {
+export function getLabels(arr: HealthMetrics[]) {
   return arr.map((item) => `${item.month.slice(0, 3)}, ${item.year}`).reverse();
-}
-
-export function formatUserData(user: any) {
-  return {
-    ...user,
-    initials: user.name
-      .split(" ")
-      .map((x: string) => x[0])
-      .join(""),
-  };
 }
 
 export function getRandomColor() {
